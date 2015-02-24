@@ -13,9 +13,8 @@ with open(arg1 , 'rb') as fk:
     classes = pickle.load(fk)
 new_list=classes.keys()
 
-i = 1
-while i > 0:
-    line = input()
+
+for line in sys.stdin:
     word = line.split()
     tot = {}
     for cls in new_list:
@@ -31,7 +30,7 @@ while i > 0:
             m = tot[cls]
             pclass = cls
     print(pclass)
-    i += 1
+
 
 
 
