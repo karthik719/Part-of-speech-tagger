@@ -2,6 +2,7 @@
 
 
 --> Precision Recall And F-score of each Named Entity Types
+
     B-LOC
     Precision - 0.6952
     Recall - 0.8069
