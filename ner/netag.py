@@ -25,23 +25,41 @@ for line in sys.stdin:
         ss = []
         if lt >= 2:
             if i == 0:
-                ss.append('w:'+word[i])
+                ss.append('w:'+word[i].rsplit('/',1)[0])
+                ss.append('wt:'+word[i].rsplit('/',1)[1])
                 ss.append('wprev:'+'startpos')
-                ss.append('wnext:'+word[i+1])    
+                ss.append('wpt:stag')
+                ss.append('wnext:'+word[i+1].rsplit('/',1)[0]) 
+                ss.append('wnt:'+word[i+1].rsplit('/',1)[1])
+                ss.append('wptag:sner')
+               
             elif i == lt-1:
-                ss.append('w:'+word[i])
-                ss.append('wprev:'+word[i-1])
+                ss.append('w:'+word[i].rsplit('/',1)[0])
+                ss.append('wt:'+word[i].rsplit('/',1)[1])
+                ss.append('wprev:'+word[i-1].rsplit('/',1)[0]) 
+                ss.append('wpt:'+word[i-1].rsplit('/',1)[1])
                 ss.append('wnext:'+'endpos')
+                ss.append('wnt:etag')
+                ss.append('wptag:'+pclass)
                     
             else:
-                ss.append('w:'+word[i])
-                ss.append('wprev:'+word[i-1])
-                ss.append('wnext:'+word[i+1])
-                     
+                ss.append('w:'+word[i].rsplit('/',1)[0])
+                ss.append('wt:'+word[i].rsplit('/',1)[1])
+                ss.append('wprev:'+word[i-1].rsplit('/',1)[0]) 
+                ss.append('wpt:'+word[i-1].rsplit('/',1)[1])
+                ss.append('wnext:'+word[i+1].rsplit('/',1)[0]) 
+                ss.append('wnt:'+word[i+1].rsplit('/',1)[1])
+                ss.append('wptag:'+pclass)
+                 
         else:
-             ss.append('w:'+word[i])
+             ss.append('w:'+word[i].rsplit('/',1)[0])
+             ss.append('wt:'+word[i].rsplit('/',1)[1])
              ss.append('wprev:'+'startpos')
-             ss.append('wnext:'+'endpos')     
+             ss.append('wpt:stag')
+             ss.append('wnext:'+'endpos')
+             ss.append('wnt:etag')
+             ss.append('wptag:sner')
+             
     
         tot = {}
         for cls in new_list:

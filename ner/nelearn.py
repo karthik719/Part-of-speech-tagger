@@ -23,19 +23,19 @@ with open(arg1, 'r', encoding='latin_1') as f:
          for i in range(lt):
              if lt >= 2:
                  if i == 0:
-                     ss = word[i].rsplit('/',1)[1]+" "+'w:'+word[i].rsplit('/',1)[0]+" "+'wprev:'+'startpos'+" "+'wnext:'+word[i+1].rsplit('/',1)[0]
+                     ss = word[i].rsplit('/',1)[1]+" "+'w:'+word[i].rsplit('/',1)[0].rsplit('/',1)[0]+" "+'wt:'+word[i].rsplit('/',1)[0].rsplit('/',1)[1]+" "+'wprev:'+'startpos'+" "+'wpt:stag'+" "+'wnext:'+word[i+1].rsplit('/',1)[0].rsplit('/',1)[0]+" "+'wnt:'+word[i+1].rsplit('/',1)[0].rsplit('/',1)[1]+" "+'wptag:sner'
                      fl.write(ss)
                      fl.write('\n')
                  elif i == lt-1:
-                     ss = word[i].rsplit('/',1)[1]+" "+'w:'+word[i].rsplit('/',1)[0]+" "+'wprev:'+word[i-1].rsplit('/',1)[0]+" "+'wnext:'+'endpos'
+                     ss = word[i].rsplit('/',1)[1]+" "+'w:'+word[i].rsplit('/',1)[0].rsplit('/',1)[0]+" "+'wt:'+word[i].rsplit('/',1)[0].rsplit('/',1)[1]+" "+'wprev:'+word[i-1].rsplit('/',1)[0].rsplit('/',1)[0]+" "+'wpt:'+word[i-1].rsplit('/',1)[0].rsplit('/',1)[1]+" "+'wnext:'+'endpos'+" "+'wnt:etag'+" "+'wptag:'+ word[i-1].rsplit('/',1)[1]
                      fl.write(ss)
                      fl.write('\n')
                  else:
-                     ss = word[i].rsplit('/',1)[1]+" "+'w:'+word[i].rsplit('/',1)[0]+" "+'wprev:'+word[i-1].rsplit('/',1)[0]+" "+'wnext:'+word[i+1].rsplit('/',1)[0] 
+                     ss = word[i].rsplit('/',1)[1]+" "+'w:'+word[i].rsplit('/',1)[0].rsplit('/',1)[0]+" "+'wt:'+word[i].rsplit('/',1)[0].rsplit('/',1)[1]+" "+'wprev:'+word[i-1].rsplit('/',1)[0].rsplit('/',1)[0]+" "+'wpt:'+word[i-1].rsplit('/',1)[0].rsplit('/',1)[1]+" "+'wnext:'+word[i+1].rsplit('/',1)[0].rsplit('/',1)[0]+" "+'wnt:'+word[i+1].rsplit('/',1)[0].rsplit('/',1)[1]+" "+'wptag:'+ word[i-1].rsplit('/',1)[1]
                      fl.write(ss)
                      fl.write('\n')
              else:
-                 ss = ss = word[i].rsplit('/',1)[1]+" "+'w:'+word[i].rsplit('/',1)[0]+" "+'wprev:'+'startpos'+" "+'wnext:'+'endpos'
+                 ss = ss = word[i].rsplit('/',1)[1]+" "+'w:'+word[i].rsplit('/',1)[0].rsplit('/',1)[0]+" "+'wt:'+word[i].rsplit('/',1)[0].rsplit('/',1)[1]+'wprev:'+'startpos'+" "+'wpt:stag'+" "+'wnext:'+'endpos'+" "+'wnt:etag'+" "+'wptag:sner'
                  fl.write(ss)
                  fl.write('\n')
 
